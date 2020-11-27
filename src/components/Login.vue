@@ -60,8 +60,8 @@ input
   border-radius 10px
   width: 310px
   height: 61px
-  border-color white
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.08);
+  box-shadow 0px 2px 15px rgba(0, 0, 0, 0.08)
+  border 0
 button
   set_margin()-2
   margin-top 80px
@@ -71,5 +71,5 @@ button
   set_fonts()
   background #FFE3D3
   box-shadow 0px 2px 15px rgba(0, 0, 0, 0.08)
-  border-color #FFE3d3
+  border 0
 </style>
