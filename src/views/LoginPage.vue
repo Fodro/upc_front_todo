@@ -2,7 +2,7 @@
   <div>
     <span>
       <Login/>
-      <ImageTodo class="imagetodo"/>
+      <ImageTodo/>
     </span>
   </div>
 </template>
@@ -20,10 +20,17 @@ export default {
 </script>
 
 <style lang="stylus">
-span
-  display flex
-  flex-direction row
-html, body
-  padding 0
-  margin 0
+@media not handheld
+  span
+    display flex
+    flex-direction row
+  html, body
+    padding 0
+    margin 0
+@media (orientation: portrait)
+  ImageTodo
+    display none
+  span
+    display block
+    margin-left 0
 </style>

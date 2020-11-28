@@ -47,50 +47,76 @@ set_text_style() {
   margin-left 10px
   text-align left
 }
-.task
-  display flex
-  flex-direction column
-  justify-content flex-start
-  align-items flex-start
-  position relative
-  text-align left
-  width 325px
-  height 150px
-  padding 10px
-  margin-right 30px
-  border 0
-  border-radius 10px
-  box-shadow 0px 2px 15px rgba(0, 0, 0, 0.08)
-h3
-  set_text_style()
-  font-size 21px
-  margin-top 0
+@media not handheld
+  .task
+    display flex
+    flex-direction column
+    justify-content flex-start
+    align-items flex-start
+    position relative
+    text-align left
+    width 325px
+    height 150px
+    padding 10px
+    margin-right 30px
+    border 0
+    border-radius 10px
+    box-shadow 0px 2px 15px rgba(0, 0, 0, 0.08)
+  h3
+    set_text_style()
+    font-size 21px
+    margin-top 0
 
-h4
-  set_text_style()
-  font-size 14px
-  color #b1afaf
-  padding 0
-  margin-top 0
-  font-size 12px
-button
-  font-family fonts
-  font-weight bold
-  font-size 14px
-  position absolute
-  bottom 15px
-  width 310px
-  height 52px
-  background white
-  border 0
-  border-radius 10px
-  box-shadow 0px 2px 15px rgba(0, 0, 0, 0.08)
-  align-self center
-  outline none
-button:hover
-  background-color #fafafa
-.doneBtn
-  color #C3FEDA
-.doAgainBtn
-  color #FFE3D3
+  h4
+    set_text_style()
+    font-size 14px
+    color #b1afaf
+    padding 0
+    margin-top 0
+    font-size 12px
+  button
+    font-family fonts
+    font-weight bold
+    font-size 14px
+    position absolute
+    bottom 15px
+    width 310px
+    height 52px
+    background white
+    border 0
+    border-radius 10px
+    box-shadow 0px 2px 15px rgba(0, 0, 0, 0.08)
+    align-self center
+    outline none
+  button:hover
+    background-color #fafafa
+  .doneBtn
+    color #C3FEDA
+  .doAgainBtn
+    color #FFE3D3
+@media (orientation: portrait)
+  button
+    font-family fonts
+    font-weight bold
+    font-size 14px
+    position absolute
+    bottom 15px
+    background white
+    border 0
+    width 160px
+    height 32px
+    border-radius 10px
+    box-shadow 0px 2px 15px rgba(0, 0, 0, 0.08)
+    align-self center
+    outline none
+  .task
+    margin-top 20px
+    margin-left 0
+    margin-right 0
+    width 180px
+    height 130px
+  h3
+    set_text_style()
+    font-size 15px
+    margin-top 0
 </style>

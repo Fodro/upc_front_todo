@@ -52,6 +52,7 @@ h1
 h2
   font-family fonts
   font-size 21px
+  padding 20px
 img
   border 1px solid #999999
   border-radius 90px
@@ -70,6 +71,7 @@ textarea
   background #FFFFFF
   box-shadow 0px 2px 15px rgba(0, 0, 0, 0.08)
   border-radius 10px
+  padding 30px
 .upperRow
   display flex
   flex-direction row

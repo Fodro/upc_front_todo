@@ -9,12 +9,17 @@ name: "ImageTodo"
 </script>
 
 <style scoped lang="stylus">
-img
-  height 100vh
-  width 50vw
-  margin-top fill
-  margin-left fill
-  padding 0
-  object-fit cover
-  object-position center
+@media not handheld
+  img
+    height 100vh
+    width 50vw
+    margin-top fill
+    margin-left fill
+    padding 0
+    object-fit cover
+    object-position center
+@media (orientation: portrait)
+  img
+    display none
+
 </style>
