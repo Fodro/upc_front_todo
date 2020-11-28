@@ -11,13 +11,15 @@
 
 <script>
 import router from "@/router";
-
+const email = ''
+const password = ''
 export default {
   name: "Login",
   components: {
   },
   methods: {
     gotoTodo: () => {
+      if (email !== '' && password !== '')
       router.push('/todos')
     }
   }
