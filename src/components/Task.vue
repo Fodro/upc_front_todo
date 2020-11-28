@@ -110,11 +110,12 @@ set_text_style() {
     align-self center
     outline none
   .task
-    margin-top 20px
+    margin-top 10px
     margin-left 0
     margin-right 0
     width 180px
     height 130px
+    margin-bottom 30px
   h3
     set_text_style()
     font-size 15px

@@ -3,7 +3,7 @@
     <h1>Tasks</h1>
     <div class="tasks">
       <Task v-for="(todo, i) in getTodos" :key="todo.title" v-bind:show-incomplete="showIncomplete" v-bind:todo="todo" v-bind:todo-index="i"/>
-      <button type="button" class="addTask" v-on:click="gotoAdd"><img width="50" height="50" src="../assets/baseline_add_black_48dp.png"/></button>
+      <button type="button" class="addTask" v-on:click="gotoAdd"><img width="50" height="50" align="center" src="../assets/baseline_add_black_48dp.png"/></button>
     </div>
     <button type="button" class="taskCount" v-on:click="changeView">{{ btnText() }}</button>
   </div>
@@ -15,7 +15,9 @@ import Task from "@/components/Task";
 import router from "@/router";
 export default {
   name: "Todos",
-  components: {Task},
+  components: {
+    Task,
+  },
   computed: mapGetters(["getTodos", "todosCompletedCount", "todosUncompletedCount"]),
   data() {
     return {
@@ -32,10 +34,19 @@ export default {
       this.showIncomplete = !this.showIncomplete
     },
     btnText () {
-      if (this.showIncomplete) {
-        return `Completed tasks: ${this.todosCompletedCount}`
-      } else {
-        return `Uncompleted tasks: ${this.todosUncompletedCount}`
+      if (window.matchMedia('(orientation: portrait)').matches){
+        if (this.showIncomplete) {
+          return `${this.todosCompletedCount}`
+        } else {
+          return `${this.todosUncompletedCount}`
+        }
+      }
+      else {
+        if (this.showIncomplete) {
+          return `Completed tasks: ${this.todosCompletedCount}`
+        } else {
+          return `Uncompleted tasks: ${this.todosUncompletedCount}`
+        }
       }
     },
     gotoAdd () {
@@ -123,6 +134,7 @@ export default {
       height auto
       width 100%
       margin-top 10px
+      margin-bottom 40px
     .task:nth-child(2n)
       justify-self start
       margin-left 20px
@@ -130,7 +142,17 @@ export default {
       justify-self end
       margin-right 20px
     .taskCount
-      display none
+      position fixed
+      left 88%
+      width 50px
+      top 30%
     .addTask
-      display none
+      width 70px
+      height 70px
+      text-align center
+      border-radius 90px
+      position fixed
+      bottom 50px
+      right 20px
+      background #FFE3D3
 </style>
