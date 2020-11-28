@@ -86,6 +86,9 @@ button
   border-radius 10px
   box-shadow 0px 2px 15px rgba(0, 0, 0, 0.08)
   align-self center
+  outline none
+button:hover
+  background-color #fafafa
 .doneBtn
   color #C3FEDA
 .doAgainBtn

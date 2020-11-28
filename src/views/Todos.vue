@@ -83,6 +83,9 @@ export default {
     box-shadow 0px 2px 15px rgba(0, 0, 0, 0.08)
     border-radius 13px 0px 0px 13px
     border 0
+    outline none
+  .taskCount:hover
+    background #ecd2c3
   html, body
     padding 0
     margin 0
@@ -99,4 +102,8 @@ export default {
     border-radius 10px
     background-color white
     box-shadow 0px 2px 15px rgba(0, 0, 0, 0.08)
+    outline none
+  .addTask:hover
+    background-color #fafafa
+
 </style>

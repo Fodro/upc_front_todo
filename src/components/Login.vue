@@ -71,6 +71,7 @@ input
   height: 61px
   box-shadow 0px 2px 15px rgba(0, 0, 0, 0.08)
   border 0
+  outline none
 button
   set_margin()-2
   margin-top 80px
@@ -81,4 +82,7 @@ button
   background #FFE3D3
   box-shadow 0px 2px 15px rgba(0, 0, 0, 0.08)
   border 0
+  outline none
+button:hover
+  background #ecd2c3
 </style>
