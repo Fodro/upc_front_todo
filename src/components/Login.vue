@@ -2,9 +2,9 @@
   <div>
     <h1>Welcome to Todo App!</h1>
     <h2>Email</h2>
-    <input type="text" id="email" placeholder="Enter email...">
+    <input type="text" id="email" placeholder=" Enter email...">
     <h2>Password</h2>
-    <input type="password" id="password" placeholder="Enter password...">
+    <input type="password" id="password" placeholder=" Enter password...">
     <button type="button" v-on:click="gotoTodo">Login</button>
   </div>
 </template>
@@ -28,7 +28,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style scoped lang="stylus">
 fonts = "Roboto Thin", sans-serif
 set_margin() {
   margin-left 336px
