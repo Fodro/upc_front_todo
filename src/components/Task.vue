@@ -2,11 +2,13 @@
   <div class="task" v-if="!todo.completed === showIncomplete">
     <h3>{{ makeTitle(todo.title) }}</h3>
     <h4>{{ makeDate() }}</h4>
-    <button type="button">Done</button>
+    <button type="button" class="doneBtn" v-on:click="changeType" v-if="!todo.completed">Done</button>
+    <button type="button" class="doAgainBtn" v-on:click="changeType" v-if="todo.completed">Do again</button>
   </div>
 </template>
 
 <script>
+import {mapMutations} from 'vuex'
 export default {
   name: "Task",
   props: {
@@ -14,18 +16,24 @@ export default {
       type: Object,
       required: true
     },
-    showIncomplete: Boolean
+    showIncomplete: Boolean,
+    todoIndex: Number
   },
   mounted() {
     console.log(this.todo)
   },
   methods: {
+    ...mapMutations(['changeTodo']),
     makeTitle: function(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     },
     makeDate: function () {
       let date = new Date()
       return `${date.getDay()}.${date.getMonth()}.${date.getFullYear()}`
+    },
+    changeType: function () {
+      console.log(this.todoIndex)
+      this.changeTodo(this.todoIndex)
     },
   }
 }
@@ -73,10 +81,13 @@ button
   bottom 15px
   width 310px
   height 52px
-  color #C3FEDA
   background white
   border 0
   border-radius 10px
   box-shadow 0px 2px 15px rgba(0, 0, 0, 0.08)
   align-self center
+.doneBtn
+  color #C3FEDA
+.doAgainBtn
+  color #FFE3D3
 </style>

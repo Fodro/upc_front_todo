@@ -1,14 +1,18 @@
 <template>
   <div>
     <h1>Tasks</h1>
-    <div class="tasks"><Task v-for="todo in getTodos" :key="todo.title" v-bind:show-incomplete="showIncomplete" v-bind:todo="todo"/></div>
-    <button type="button" v-on:click="changeView">{{ btnText() }}</button>
+    <div class="tasks">
+      <Task v-for="(todo, i) in getTodos" :key="todo.title" v-bind:show-incomplete="showIncomplete" v-bind:todo="todo" v-bind:todo-index="i"/>
+      <button type="button" class="addTask" v-on:click="gotoAdd"><img width="50" height="50" src="../assets/baseline_add_black_48dp.png"/></button>
+    </div>
+    <button type="button" class="taskCount" v-on:click="changeView">{{ btnText() }}</button>
   </div>
 </template>
 
 <script>
 import  {mapGetters} from 'vuex'
 import Task from "@/components/Task";
+import router from "@/router";
 export default {
   name: "Todos",
   components: {Task},
@@ -19,7 +23,9 @@ export default {
     }
   },
   mounted() {
-    this.$store.dispatch('fetchTodos')
+    if (this.todosUncompletedCount + this.todosCompletedCount === 0) {
+      this.$store.dispatch('fetchTodos')
+    }
   },
   methods: {
     changeView () {
@@ -31,6 +37,9 @@ export default {
       } else {
         return `Uncompleted tasks: ${this.todosUncompletedCount}`
       }
+    },
+    gotoAdd () {
+      router.push('/todos/add')
     },
   }
 }
@@ -60,7 +69,7 @@ export default {
     margin-left 40px
     margin-top 0px
     width 60vw
-  button
+  .taskCount
     font-family fonts
     text-align left
     font-weight bolder
@@ -77,4 +86,17 @@ export default {
   html, body
     padding 0
     margin 0
+  .addTask
+    font-family fonts
+    text-align center
+    width 345px
+    height 170px
+    padding 10px
+    margin-right 30px
+    border 0
+    font-weight bolder
+    font-size 18px
+    border-radius 10px
+    background-color white
+    box-shadow 0px 2px 15px rgba(0, 0, 0, 0.08)
 </style>

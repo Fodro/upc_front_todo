@@ -5,17 +5,19 @@ export default {
                 .then(response => response.json())
                 .then(json => ctx.commit("updateTodos", json))
         },
-        addTodo(ctx, newTodo){
-            ctx.commit("addTodos", newTodo)
-        },
     },
     mutations: {
         updateTodos(state, todos) {
             state.todos = todos
         },
-        addTodos(state, todo) {
+        addTodo(state, todo) {
             state.todos.push(todo)
-        }
+        },
+        changeTodo(state,i) {
+            console.log('started')
+            console.log(state.todos[i].completed)
+            state.todos[i].completed = !state.todos[i].completed
+        },
     },
     state: {
       todos: []

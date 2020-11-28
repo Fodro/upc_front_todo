@@ -2,27 +2,32 @@
   <div>
     <h1>Welcome to Todo App!</h1>
     <h2>Email</h2>
-    <input type="text" id="email" placeholder=" Enter email...">
+    <input type="text" v-model="email" placeholder="Enter email...">
     <h2>Password</h2>
-    <input type="password" id="password" placeholder=" Enter password...">
+    <input type="password" v-model="password" placeholder="Enter password...">
     <button type="button" v-on:click="gotoTodo">Login</button>
   </div>
 </template>
 
 <script>
 import router from "@/router";
-let email = ''
-let password = ''
 export default {
   name: "Login",
   components: {
   },
+  data () {
+    return {
+      email: '',
+      password: ''
+    }
+  },
   methods: {
-    gotoTodo: () => {
-      email = document.getElementById('email').value
-      password = document.getElementById('password').value
-      if (email !== '' && password !== '')
-      router.push('/todos')
+    gotoTodo () {
+      console.log(this.email)
+      console.log(this.password)
+      if (this.email !== '' && this.password !== '') {
+        router.push('/todos')
+      }
     }
   }
 }
