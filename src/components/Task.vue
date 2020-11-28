@@ -109,6 +109,8 @@ set_text_style() {
     box-shadow 0px 2px 15px rgba(0, 0, 0, 0.08)
     align-self center
     outline none
+  button:hover
+    background white
   .task
     margin-top 10px
     margin-left 0

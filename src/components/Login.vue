@@ -123,5 +123,6 @@ export default {
     margin-right defaultMargin
     margin-left defaultMargin
     margin-top 125px
-
+  button:hover
+    background #FFE3D3
 </style>

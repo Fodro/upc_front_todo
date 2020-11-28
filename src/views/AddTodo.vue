@@ -124,11 +124,13 @@ fonts = "Roboto Thin", sans-serif
     height 117px
     margin-left 34px
     margin-right 15px
-    margin-bottom 190px
+    margin-bottom 140px
   .btnCreate
     width 306px
     height 54px
     margin-right 19px
     margin-left 35px
     margin-bottom 34px
+  .btnCreate:hover
+    background #FFE3D3
 </style>

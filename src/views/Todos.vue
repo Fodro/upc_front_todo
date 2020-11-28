@@ -146,6 +146,8 @@ export default {
       left 88%
       width 50px
       top 30%
+    .taskCount:hover
+      background #FFE3D3
     .addTask
       width 70px
       height 70px
@@ -154,5 +156,7 @@ export default {
       position fixed
       bottom 50px
       right 20px
+      background #FFE3D3
+    .addTask:hover
       background #FFE3D3
 </style>
