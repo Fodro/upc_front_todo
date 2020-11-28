@@ -1,5 +1,5 @@
 <template>
-  <div class="task" v-if="!todo.completed">
+  <div class="task" v-if="!todo.completed === showIncomplete">
     <h3>{{ makeTitle(todo.title) }}</h3>
     <h4>{{ makeDate() }}</h4>
     <button type="button">Done</button>
@@ -13,7 +13,8 @@ export default {
     todo: {
       type: Object,
       required: true
-    }
+    },
+    showIncomplete: Boolean
   },
   mounted() {
     console.log(this.todo)
